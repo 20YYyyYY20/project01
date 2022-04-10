@@ -51,7 +51,7 @@ $(function() {
             method: 'POST',
             data: $(this).serialize(), //获取当前表单输入的所有数据
             success: function(res) {
-
+                console.log(res);
                 if (res.status !== 0) {
                     return layer.msg('账号或密码输入错误');
                 }
