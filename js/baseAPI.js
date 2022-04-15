@@ -9,12 +9,13 @@ $.ajaxPrefilter(function(options) {
             Authorization: localStorage.getItem('token') || '',
         }
     }
+
     options.complete = function(res) {
         if (res.responseJSON.status === 1) {
             // 强制清空token
             localStorage.removeItem('token');
             //强制跳转到登录页面
-            location.href = '/login.html';
+            location.href = '../login.html';
         }
         // console.log(res.responseJSON.status);
     }
